@@ -11,7 +11,7 @@ use Carp qw/croak/;
     sub get { $DATA_STORE->{ $_[1] };}
     sub exists { exists $DATA_STORE->{ $_[1] };}
 }
-our $VERSION = q{0.01};
+our $VERSION = q{0.02};
 our $_INSTANCE      = undef;
 our $_IS_IN_SESSION = 0;
 
@@ -120,11 +120,7 @@ ScopeSession - a scope based object note and option store
 
 =head1 VERSION
 
-Version 0.01
-
-=cut
-
-our $VERSION = '0.01';
+Version 0.02
 
 =head1 SYNOPSIS
 
@@ -208,7 +204,7 @@ push error handler
 
 =head2 is_started
 
-ask to be in a session.
+if in a scope session, return true value.
 
     ScopeSession::start {
         ScopeSession->is_started ; # 1 
@@ -221,45 +217,6 @@ ask to be in a session.
 =head1 AUTHOR
 
 Daichi Hiroki, C<< <hirokidaichi<AT>gmail.com> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-scopesession at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=ScopeSession>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc ScopeSession
-
-
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=ScopeSession>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/ScopeSession>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/ScopeSession>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/ScopeSession/>
-
-=back
-
-
-=head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
